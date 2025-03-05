@@ -11,8 +11,6 @@ export default async function Home({ params }: { params: Params }) {
   const slug = (await params).slug;
   const pageData = await fetchStory("draft", slug);
 
-    console.log("Page Data:", pageData);console.log("Page Data:", pageData);
-
      if (!pageData?.story) {
        return <p>Loading...</p>; // Handle missing data gracefully
      }

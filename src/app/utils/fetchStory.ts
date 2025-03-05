@@ -9,16 +9,10 @@ export const fetchStory = async (
   const correctSlug = `/${slug ? slug.join("/") : "home"}`;
   const token = process.env.NEXT_PUBLIC_STORYBLOK_TOKEN;
 
-  console.log(
-    "Fetching Storyblok API:",
-    `https://api-us.storyblok.com/v2/cdn/stories${correctSlug}?version=${version}&token=${token}`
-  );
-
   if (!token) {
     console.error("❌ Storyblok API Token is missing");
     return null;
   }
-
 
   return fetch(
     `
