@@ -48,9 +48,9 @@ export default function PostsPage() {
           {stories.map((story) => (
             <div
               key={story.id}
-              className="border p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+              className="border p-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-gray-900 group" 
             >
-              <Link href={`/posts/${story.slug}`}>
+              <Link href={`/posts/${story.slug}`} className="block">
                 {/* Image */}
                 <div className="relative h-48 w-full mb-4">
                   {story.content.image?.[0]?.filename && (
@@ -64,10 +64,14 @@ export default function PostsPage() {
                 </div>
 
                 {/* Title */}
-                <h2 className="text-1xl font-semibold mb-2 uppercase">{story.name}</h2>
+                <h2 className="text-1xl font-semibold mb-2 uppercase group-hover:text-white">
+                   {story.name}
+                </h2>
 
                 {/* Intro */}
-                <p className="text-gray-600 text-sm leading-5">{story.content.intro}</p>
+                <p className="text-gray-600 text-sm leading-5 group-hover:text-gray-200">
+                    {story.content.intro}
+                </p>
               </Link>
             </div>
           ))}
