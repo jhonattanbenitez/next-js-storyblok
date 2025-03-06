@@ -82,7 +82,7 @@ const Post: React.FC<PostProps> = ({ blok }) => {
               alt={blok.title}
               fill
               sizes="100vw"
-              className="object-cover rounded-lg"
+              className="rounded-lg"
             />
           ) : null}
         </div>
